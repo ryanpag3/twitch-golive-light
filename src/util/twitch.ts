@@ -59,8 +59,5 @@ export const searchChannels = async (query: string) => {
         }
     });
 
-    console.log(`got channels ${data.data.length}`);
-    console.log(data.data);
-    
     return data;
 }

@@ -9,6 +9,7 @@ import { CronJob } from 'cron';
 import Fastify from 'fastify';
 import path from 'path';
 import { startCronJob } from './util/cronjob';
+import { discoverAndCreateUser, getBridge } from './util/philips-hue';
 import { getAppToken, searchChannels } from './util/twitch';
 
 const fastify = Fastify();
