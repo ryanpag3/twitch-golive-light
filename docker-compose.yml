@@ -1,0 +1,7 @@
+version: '3'
+services:
+    twitch-golive-light:
+        image: ryanpage/twitch-golive-light
+        env_file:
+            - ./.env
+            - ./.env.public
