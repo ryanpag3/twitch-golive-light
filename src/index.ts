@@ -1,5 +1,15 @@
+const dotenv = require('dotenv');
+dotenv.config({
+    path: '.env'
+});
+dotenv.config({
+    path: '.env.public'
+})
+import { CronJob } from 'cron';
 import Fastify from 'fastify';
 import path from 'path';
+import { startCronJob } from './util/cronjob';
+import { getAppToken, searchChannels } from './util/twitch';
 
 const fastify = Fastify();
 
@@ -9,8 +19,9 @@ fastify.register(require('fastify-static'), {
 
 const start = async () => {
     try {
-        console.log('starting twitch golive light server.');
+        await startCronJob();
         await fastify.listen(process.env.PORT || 3000);
+        console.log(`Started fastify server.`);
     } catch (e) {
         console.error(e);
         process.exit(1);
