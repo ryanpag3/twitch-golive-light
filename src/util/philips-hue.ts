@@ -64,7 +64,7 @@ export async function turnOnStreamLight() {
     const LightState = hueApi.v3.lightStates.LightState;
     const state = new LightState()
         .on();
-    const lights = await bridge.lights.getLightByName('StreamLight');
+    const lights = await bridge.lights.getLightByName(process.env.STREAM_LIGHT || 'StreamLight');
     lights.forEach((light: any) => {
         bridge.lights.setLightState(light.id, state);
     });
@@ -75,7 +75,7 @@ export async function turnOffStreamLight() {
     const LightState = hueApi.v3.lightStates.LightState;
     const state = new LightState()
         .off();
-    const lights = await bridge.lights.getLightByName('StreamLight');
+    const lights = await bridge.lights.getLightByName(process.env.STREAM_LIGHT || 'StreamLight');
     lights.forEach((light: any) => {
         bridge.lights.setLightState(light.id, state);
     });
