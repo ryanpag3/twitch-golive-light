@@ -1,6 +1,6 @@
 # Twitch Go Live Light
 
-This application allows you to toggle a Philips Hue lightbulb when going live on Twitch.
+This application allows you to toggle a Philips Hue lightbulb when going live on Twitch. I had the idea while streaming programming on my [twitch channel](https://www.twitch.tv/ryan_pag3) and my girlfriend complaining she could walk in naked on accident. Oops!
 
 ## Configuration
 
